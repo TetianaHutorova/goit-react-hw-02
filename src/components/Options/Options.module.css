@@ -1,0 +1,7 @@
+.optionsContainer{
+display: flex;
+gap: 10px;
+}
+.btnOptions{
+    border-color: rgb(75, 74, 74);
+}
