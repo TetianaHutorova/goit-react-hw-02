@@ -29,6 +29,7 @@ export default function App() {
   );
 
   const handlerReset = () => setProperties(defaultProperties);
+  const positiveFeedback = Math.round((properties.good / totalFeedback) * 100);
 
   useEffect(() => {
     localStorage.setItem("commentsObj", JSON.stringify(properties));
@@ -44,7 +45,11 @@ export default function App() {
         reset={handlerReset}
       />
       {totalFeedback ? (
-        <Feedback value={properties} total={totalFeedback} />
+        <Feedback
+          value={properties}
+          total={totalFeedback}
+          positiveFeedback={positiveFeedback}
+        />
       ) : (
         <Notification />
       )}
